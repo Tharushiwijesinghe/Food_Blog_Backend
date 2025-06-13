@@ -4,6 +4,8 @@ const nodemailer = require('nodemailer'); // ✅ Required for sending emails
 const recipieModels = require('../models/recipieModels');
 
 
+
+
 // ✅ Route to handle contact form submission
 router.post('/', async (req, res) => {
   const { name, email, message } = req.body;
@@ -32,6 +34,9 @@ router.post('/', async (req, res) => {
     res.status(500).json({ success: false, message: 'Failed to send email.' });
   }
 });
+
+
+
 
 
 module.exports = router;
