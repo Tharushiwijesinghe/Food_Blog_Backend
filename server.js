@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const recipieRoutes = require('./routes/recipieRoutes');
 const adminRoute = require('./routes/AdminRoute');
 const rateLimit = require('express-rate-limit');
+const contactRoute  = require('./routes/contactRoute');
 
 dotenv.config();
 const app = express();
@@ -34,6 +35,7 @@ app.use('/api/contact', recipieRoutes);
 app.use('/api/recipies', recipieRoutes);
 app.use('/api/recipes', recipieRoutes);
 app.use('/api/admin', adminRoute);
+app.use('/api/recipes-admin', contactRoute);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
